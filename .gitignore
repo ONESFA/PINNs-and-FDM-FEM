@@ -1,0 +1,14 @@
+# 학습 결과물 (노트북이 생성하는 체크포인트)
+*.pt
+*.pth
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
