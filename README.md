@@ -15,6 +15,7 @@ notebooks/   실험 노트북 (아래 표)
 src/pinn/    손실함수 초안 코드 (loss_v1.py, loss_v2.py)
 docs/        보고서·정리 문서 (오차분석 보고서 .docx, 손실함수 설명, PINN vs FDM 비교)
 docs/archive 주차별 회의 메모
+docs/figures 노트북 실행 결과 그림 (v4_adaptive: 보고서 9장)
 ```
 
 ## 노트북
