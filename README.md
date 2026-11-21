@@ -15,6 +15,7 @@ notebooks/   실험 노트북 (아래 표)
 src/pinn/    손실함수 초안 코드 (loss_v1.py, loss_v2.py)
 docs/        보고서·정리 문서 (오차분석 보고서 .docx, 손실함수 설명, PINN vs FDM 비교)
 docs/archive 주차별 회의 메모
+docs/figures 노트북 실행 결과 그림 (v4_adaptive: 보고서 9장 그림)
 ```
 
 ## 노트북
@@ -27,6 +28,7 @@ docs/archive 주차별 회의 메모
 | `PINNS_v2_time_marching.ipynb` | v2 + **PDE 내부 영역 Time-Marching** (`TM_MODE`): 시간 구간 분할 / 인과성 가중치(Causal PINN) / 시간축 적응형 샘플링 |
 | `PINNS_v3.ipynb` | Time-Marching + 입력 정규화, hard BC, 초기 기울기 손실, 안정적인 grad-norm, L-BFGS 발산 복원, **에너지·잔차 오차 추정 검증**(보고서 4~5장), **FDM 기준선·수렴 차수·PINN vs FDM 오차 맵**(보고서 7장) |
 | `PINNS_v4_adaptive.ipynb` | v3 + **중요도 기반 샘플링**(`AS_*`): 인과성 가중치가 0에 가까운 시간대의 PDE 점 생략(`AS_SKIP`), 인과성 가중치 × 잔차 크기에 따른 적응 샘플링(`AS_MODE="rad"`), 계산량 지표(누적 PDE 점 계산 수), 실행 간 비교 셀. 기본 설정은 `T = 3`, 강한 인과성(`eps = [1, 10, 100]`) |
+| `PINNS_v5_pulse.ipynb` | 좁은 초기 펄스(가우시안 돌 3개) 문제에서 PDE 점 샘플링 비교: `uniform` / `rad` / `skip+rad` × 여러 $N_f$. 정확해 대신 고해상도 FDM(401×401) 기준해, Fourier feature 입력, 비교 실험 셀(오차 vs 점 수). 보고서 9.5절 |
 | `PINNS_inverse_pond.ipynb` | **역문제**: 돌 3개를 떨어뜨린 연못에서 부표 센서 36개 기록만으로 파속 $c$ 와 전체 파동 복원. 돌 위치를 아는 경우(A)·모르는 경우(B)를 PINN과 FDM(c 탐색, 틀린 정보 FDM)으로 비교 |
 
 모든 하이퍼파라미터는 각 노트북의 **0번 설정 셀**에서만 바꿉니다.
